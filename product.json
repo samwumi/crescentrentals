@@ -1,0 +1,252 @@
+[
+    {
+      "id": "chair1",
+      "title": "White Plastic Chair",
+      "description": "Our classic white plastic chair is perfect for all kinds of events — weddings, birthdays, and corporate parties.",
+      "image": "img/chairs/t1.jpg"
+    },
+    {
+      "id": "chair2",
+      "title": "Gold Chiavari Chair",
+      "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+      "image": "img/chairs/t2.jpg"
+    },
+
+    {
+        "id": "chair3",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t3.jpg"
+      },
+
+      {
+        "id": "chair5",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t5.jpg"
+      },
+
+      {
+        "id": "chair6",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t6.jpg"
+      },
+
+      {
+        "id": "chair7",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t7.jpg"
+      },
+
+      {
+        "id": "chair8",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t8.jpg"
+      },
+
+      {
+        "id": "chair9",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t9.jpg"
+      },
+
+      {
+        "id": "chair10",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t10.jpg"
+      },
+
+      {
+        "id": "chair11",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t11.jpg"
+      },
+
+      {
+        "id": "chair12",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t12.jpg"
+      },
+
+      {
+        "id": "chair13",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t13.jpg"
+      },
+
+      {
+        "id": "chair14",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t14.jpg"
+      },
+
+      {
+        "id": "chair15",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t15.jpg"
+      },
+
+      {
+        "id": "chair16",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/chairs/t16.jpg"
+      },
+
+      {
+        "id": "conc1",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc1.jpg"
+      },
+      {
+        "id": "conc2",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc2.jpg"
+      },
+
+      {
+        "id": "conc3",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc1.jpg"
+      },
+
+      {
+        "id": "conc4",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc4.jpg"
+      },
+
+      {
+        "id": "conc5",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc5.jpg"
+      },
+
+      {
+        "id": "conc6",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc6.jpg"
+      },
+
+      {
+        "id": "conc7",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc7.jpg"
+      },
+
+      {
+        "id": "conc8",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/conc/conc8.jpg"
+      },
+
+      {
+        "id": "bounce1",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/bounce/bounce2.png"
+      },
+
+      {
+        "id": "bounce2",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/bounce/bounce1.png"
+      },
+
+      {
+        "id": "heating1",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/heating&cooling/h2.jpg"
+      },
+
+      {
+        "id": "heating2",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/heating&cooling/LaskoFan.png"
+      },
+
+      {
+        "id": "heating3",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/heating&cooling/Waycool.png"
+      },
+     
+      {
+        "id": "tent1",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent1.jpg"
+      },
+      {
+        "id": "tent2",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent1.jpg"
+      },
+      {
+        "id": "tent3",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent3.jpg"
+      },
+
+      {
+        "id": "tent4",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent4.jpg"
+      },
+
+      {
+        "id": "tent5",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent5.jpg"
+      },
+      {
+        "id": "tent6",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent6.jpg"
+      },
+
+      {
+        "id": "tent7",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent7.jpg"
+      },
+
+      {
+        "id": "tent8",
+        "title": "Gold Chiavari Chair",
+        "description": "Elegant and sturdy, the Chiavari chair adds sophistication to weddings and VIP events.",
+        "image": "img/tents/tent8.jpg"
+      }
+      
+
+
+  ]
+  

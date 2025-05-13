@@ -582,7 +582,6 @@ h2 {
   /* position: absolute;
   bottom: 0; */
   width: 100%;
-  margin: 0 auto;
 } 
 
 .footer-container {
@@ -591,6 +590,7 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .footer-column h2, 
@@ -624,15 +624,24 @@ h2 {
 .whatsapp-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* 👈 Controls spacing between icon and text */
   background-color: var(--whatsapp-green);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem; /* 👈 More room for text on mobile */
   border-radius: 8px;
   margin-top: 1rem;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
+
+.whatsapp-btn img {
+  width: 20px;  /* 👈 Resizes the icon */
+  height: 20px;
+}
+
 
 .whatsapp-btn img {
   width: 20px;
@@ -651,4 +660,32 @@ h2 {
   border-top: 1px solid #374151;
   font-size: 0.85rem;
   color: #9ca3af;
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .whatsapp-btn {
+    /* width: 100%;  */
+    padding: 0.75rem 1rem;
+    font-size: 1rem; 
+    gap: 6.4 px;
+  }
+
+  .whatsapp-btn img {
+    width: 24px; /* Icon size */
+    height: 24px;
+    margin-right: 5px; /* Reduce space between icon and text */
+  }
+
+
+  .footer-column img {
+    margin: 0 auto;
+  }
+
+  
 }

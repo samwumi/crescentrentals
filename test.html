@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Global Event Rentals - Product Details</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFC1CC; /* light pink */
+    color: #333;
+    line-height: 1.5;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #FFD700;
+    outline-offset: 3px;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+
+  /* Navigation */
+  nav {
+    background: #C2185B; /* magenta */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    user-select: none;
+  }
+  nav a {
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus-visible {
+    background-color: #FFD700; /* gold */
+    color: #880E4F; /* deep magenta */
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 3rem 1rem 1rem 1rem;
+  }
+  header h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #C2185B;
+    letter-spacing: 0.05em;
+  }
+  header p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #880E4F;
+  }
+
+  /* Main container */
+  main {
+    max-width: 1200px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+
+  /* Categories */
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  .category-btn {
+    background: #FFC1CC;
+    border: 2px solid #C2185B;
+    color: #C2185B;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  .category-btn:hover,
+  .category-btn:focus-visible {
+    background: #C2185B;
+    color: white;
+    border-color: #FFD700;
+  }
+  .category-btn.active {
+    background: #C2185B;
+    color: white;
+    border-color: #FFD700;
+    cursor: default;
+  }
+
+  /* Products grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+  }
+
+  /* Product card */
+  .product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(194 24 91 / 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover,
+  .product-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgb(255 215 0 / 0.6);
+  }
+
+  .product-image {
+    background: #f9f0f4;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-image img {
+    max-height: 160px;
+    object-fit: contain;
+  }
+  .no-image {
+    font-style: italic;
+    color: #C2185B;
+  }
+
+  .product-info {
+    padding: 1.2rem 1.5rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-name {
+    font-size: 1.3rem;
+    color: #C2185B;
+    font-weight: 800;
+    margin: 0 0 0.4rem 0;
+  }
+  .product-price {
+    font-size: 1.25rem;
+    color: #880E4F;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .product-description {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.2rem;
+  }
+  .product-specs {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  .specs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
+  .specs-row div {
+    min-width: 120px;
+  }
+
+  /* Contact Us button */
+  .btn-contact {
+    background-color: #880E4F;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+  }
+  .btn-contact:hover,
+  .btn-contact:focus-visible {
+    background-color: #FFD700;
+    color: #880E4F;
+    outline-offset: 2px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 450px) {
+    .product-specs .specs-row div {
+      min-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav" aria-label="Primary navigation"></nav>
+
+<header>
+  <h1>Global Event Rentals — Your Event, Our Expertise</h1>
+  <p>Browse our rental equipment below</p>
+</header>
+
+<main>
+  <section class="categories" role="tablist" aria-label="Product categories"></section>
+
+  <section class="products-grid" aria-live="polite" aria-relevant="additions removals" aria-label="Products list"></section>
+</main>
+
+<script>
+  // Data JSON - image fields left blank for your update
+  const data = {
+    "categories": [
+      {
+        "id": "chairs_and_tables",
+        "name": "Chairs and Tables",
+        "subcategories": [
+          {
+            "id": "chairs",
+            "name": "Chairs",
+            "products": [
+              {
+                "id": "chiavari_gold_chair",
+                "name": "Chiavari Gold Chair",
+                "price": "$4",
+                "description": "Our Gold Chiavari chairs are more than just seating; they are a statement piece that elevates the entire event ambiance. Their combination of elegance, durability, and versatility makes them a preferred choice for event planners and venue owners alike. Whether you're planning a lavish wedding, an upscale corporate event, or a Birthday party, gold Chiavari chairs will add the perfect touch of elegance and ensure your guests are seated in style and comfort.",
+                "weight": "9 lb",
+                "height": "16 in",
+                "width": "16 in",
+                "seat_color": "white",
+                "seat_type": "cushion",
+                "image": "img/chairs/t2.jpg"
+              },
+              {
+                "id": "fan_back_folding_plastic_chair",
+                "name": "Fan Back Folding Plastic Chair",
+                "price": "$1.50",
+                "description": "Our Fan back chairs are more than just functional seating; they are a design statement that enhances the aesthetic appeal of any space. Their unique design, combined with durability and comfort, makes them a preferred choice.",
+                "weight": "7 lb",
+                "color": "white",
+                "image": "img/chairs/t2.jpg"
+              }
+            ]
+          },
+          {
+            "id": "tables",
+            "name": "Tables",
+            "products": [
+              {
+                "id": "6ft_rectangular_table",
+                "name": "6 Foot Rectangular Table",
+                "price": "$10",
+                "description": "Rent a 6ft commercial Rectangular folding Table. This table can accommodate 6 chairs or 8 chairs using the ends of the table.",
+                "image": ""
+              },
+              {
+                "id": "8ft_rectangular_table",
+                "name": "8 Foot Rectangular Table",
+                "price": "$12",
+                "description": "Rent 8ft commercial rectangular Table. This table can accommodate 8 chairs or 10 chairs using the ends of the table, works great for serving buffet.",
+                "image": ""
+              },
+              {
+                "id": "5ft_round_table",
+                "name": "60in or 5 Foot Round Table",
+                "price": "$13",
+                "description": "Rent a 5ft (60in) commercial Round Table. This table can accommodate 6-8 chairs.",
+                "image": ""
+              },
+              {
+                "id": "6ft_round_table",
+                "name": "72in or 6 Foot Commercial Grade Round Table",
+                "price": "$15",
+                "description": "This table can accommodate 8-10 chairs.",
+                "image": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tents",
+        "name": "Tents",
+        "products": [
+          {
+            "id": "20x20_frame_tent",
+            "name": "20x20 Frame Tent",
+            "price": "",
+            "description": "Our commercial grade top of the line frame tents are perfect for any event. These must be installed by us and the prices listed include setup and breakdown.",
+            "image": ""
+          },
+          {
+            "id": "20x40_frame_tent",
+            "name": "20x40 Frame Tent",
+            "price": "",
+            "description": "Our commercial grade top of the line frame tents are perfect for any event. These must be installed by us and the prices listed include setup and breakdown.",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "id": "cooling",
+        "name": "Cooling",
+        "products": [
+          {
+            "id": "evaporative_outdoor_air_cooler",
+            "name": "Evaporative Outdoor Air Cooler",
+            "price": "$115",
+            "description": "Keeps your guest nice and cool in the summer heat, with this awesome evaporative cooler. It provides up to 600 square feet of cooling coverage and 2 fan speeds.",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "id": "concessions",
+        "name": "Concessions",
+        "products": [
+          {
+            "id": "popcorn_machine",
+            "name": "Popcorn Machine",
+            "price": "$70",
+            "description": "Rent this old fashioned 60-inch-tall Commercial High Production Popcorn Machine with the Cart. This top of the line commercial popcorn machine has a large basin and a high-output 8-ounce kettle that pops 147 one-ounce bags of popcorn per hour. It has a built-in warming deck to keep popcorn hot and fresh. Rental includes popcorn kits to serve 50 people and 50 one oz. popcorn bags. 1420 watts / 12 amps. Purchase extra kits for $10 each. Hire concession stand attendant/server comes at extra cost.",
+            "image": ""
+          },
+          {
+            "id": "cotton_candy_machine",
+            "name": "Cotton Candy Machine",
+            "price": "$75",
+            "description": "Rent a High Production Commercial Cotton Candy machine which includes a sneeze guard shield and table stand. Makes 2-3 servings per minute. Rental includes one 52 oz. carton of Sugar Floss and 50 cones. Sugar Floss flavors: Pink Vanilla, Blue Raspberry, Cherry, Grape. Purchase extra cartons for $15 each. Hire concession stand attendant/server extra cost.",
+            "image": ""
+          },
+          {
+            "id": "snow_cone_machine",
+            "name": "Snow Cone Machine",
+            "price": "$60",
+            "description": "Heavy duty Snow Cone Machine crushes 440 lbs. of ice per hour. Rental includes syrup, cups, and straws. Multiple syrup flavors available. Purchase extra supplies for $5. Hire concession stand attendant/server extra cost.",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "id": "bounce_house",
+        "name": "Bounce House",
+        "products": [
+          {
+            "id": "white_castle_bounce_house",
+            "name": "White Castle Bounce House",
+            "price": "$300",
+            "description": "Our White Castle is the perfect addition to elevate the aesthetic of your party. Rental includes 3-5 hours/duration of your party. All ages welcome. Dimensions: 13x13 ft. Does not include balloon decor; packages are available.",
+            "image": ""
+          }
+        ]
+      }
+    ],
+    "yard_signs": {
+      "info": "Your one-stop-shop for vibrant, custom yard signs that make any celebration unforgettable. Please contact us for details of your theme and availability."
+    },
+    "navigation": [
+      "HOME",
+      "RESERVATIONS",
+      "PARTY RENTALS",
+      "YARDSIGNS",
+      "ABOUT US",
+      "FAQ"
+    ],
+    "reservationFormURL": "https://www.honeybook.com/widget/modernbounce_houston_196963/cf_id/616a3b4e23b2b63d631c0754"
+  };
+
+  // Build navigation menu
+  const nav = document.getElementById('main-nav');
+  data.navigation.forEach(item => {
+    const a = document.createElement('a');
+    a.href = "#";
+    a.textContent = item;
+    a.setAttribute('role', 'link');
+    nav.appendChild(a);
+  });
+
+  // Elements for categories and products
+  const categoriesContainer = document.querySelector('.categories');
+  const productsGrid = document.querySelector('.products-grid');
+
+  // Flatten categories and subcategories for tab buttons
+  const tabs = [];
+  data.categories.forEach(cat => {
+    if (cat.subcategories) {
+      cat.subcategories.forEach(subcat => {
+        tabs.push({
+          id: subcat.id,
+          name: `${cat.name} › ${subcat.name}`,
+          products: subcat.products
+        });
+      });
+    } else {
+      tabs.push({
+        id: cat.id,
+        name: cat.name,
+        products: cat.products || []
+      });
+    }
+  });
+
+  // Add "Yard Signs" as a special tab that shows info only
+  tabs.push({
+    id: 'yard_signs',
+    name: 'Yard Signs',
+    info: data.yard_signs.info
+  });
+
+  // Render category tabs
+  tabs.forEach((tab, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'category-btn';
+    btn.textContent = tab.name;
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    btn.setAttribute('tabindex', i === 0 ? '0' : '-1');
+    if(i === 0) btn.classList.add('active');
+
+    btn.addEventListener('click', () => {
+      // Update active state on buttons
+      categoriesContainer.querySelectorAll('button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        b.setAttribute('tabindex', '-1');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('tabindex', '0');
+
+      // Render products or info for selected tab
+      renderProducts(tab);
+    });
+
+    categoriesContainer.appendChild(btn);
+  });
+
+  // Render products or info for a tab
+  function renderProducts(tab) {
+    productsGrid.innerHTML = '';
+
+    if (tab.info) {
+      // For Yard Signs info
+      const infoDiv = document.createElement('div');
+      infoDiv.style.background = 'white';
+      infoDiv.style.borderRadius = '15px';
+      infoDiv.style.boxShadow = '0 0 20px rgb(194 24 91 / 0.3)';
+      infoDiv.style.padding = '2rem';
+      infoDiv.style.fontSize = '1.1rem';
+      infoDiv.style.color = '#880E4F';
+      infoDiv.textContent = tab.info;
+      productsGrid.appendChild(infoDiv);
+      return;
+    }
+
+    if (!tab.products || tab.products.length === 0) {
+      const emptyMsg = document.createElement('p');
+      emptyMsg.textContent = 'No products available.';
+      productsGrid.appendChild(emptyMsg);
+      return;
+    }
+
+    tab.products.forEach(prod => {
+      const card = document.createElement('article');
+      card.className = 'product-card';
+      card.tabIndex = 0;
+      card.setAttribute('aria-labelledby', `${prod.id}-title`);
+      card.setAttribute('role', 'group');
+
+      // Image container
+      const imgDiv = document.createElement('div');
+      imgDiv.className = 'product-image';
+
+      if (prod.image) {
+        const img = document.createElement('img');
+        img.src = prod.image;
+        img.alt = prod.name;
+        imgDiv.appendChild(img);
+      } else {
+        const noImgText = document.createElement('span');
+        noImgText.className = 'no-image';
+        noImgText.textContent = 'Image coming soon';
+        imgDiv.appendChild(noImgText);
+      }
+
+      // Info container
+      const infoDiv = document.createElement('div');
+      infoDiv.className = 'product-info';
+
+      const title = document.createElement('h3');
+      title.id = `${prod.id}-title`;
+      title.className = 'product-name';
+      title.textContent = prod.name;
+
+      const price = document.createElement('p');
+      price.className = 'product-price';
+      price.textContent = prod.price;
+
+      const desc = document.createElement('p');
+      desc.className = 'product-description';
+      desc.textContent = prod.description;
+
+      // Specs block
+      const specsDiv = document.createElement('div');
+      specsDiv.className = 'product-specs';
+
+      const specsRows = document.createElement('div');
+      specsRows.className = 'specs-row';
+
+      // Collect specs keys to show
+      const specsKeys = ['weight', 'height', 'width', 'seat_color', 'seat_type', 'color', 'dimensions'];
+      specsKeys.forEach(key => {
+        if (prod[key]) {
+          const specItem = document.createElement('div');
+          const formattedKey = key.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase());
+          specItem.textContent = `${formattedKey}: ${prod[key]}`;
+          specsRows.appendChild(specItem);
+        }
+      });
+
+      specsDiv.appendChild(specsRows);
+
+      // Contact button
+      const btnContact = document.createElement('button');
+      btnContact.className = 'btn-contact';
+      btnContact.textContent = 'Contact Us';
+      btnContact.addEventListener('click', () => {
+        // For now, just alert or you can customize with your contact form link
+        alert('Thank you for your interest! Please contact us at info@example.com.');
+      });
+
+      // Append all
+      infoDiv.appendChild(title);
+      if (prod.price) infoDiv.appendChild(price);
+      infoDiv.appendChild(desc);
+      if (specsRows.childElementCount > 0) infoDiv.appendChild(specsDiv);
+      infoDiv.appendChild(btnContact);
+
+      card.appendChild(imgDiv);
+      card.appendChild(infoDiv);
+
+      productsGrid.appendChild(card);
+    });
+  }
+
+  // Initial render first tab
+  renderProducts(tabs[0]);
+</script>
+
+</body>
+</html>

@@ -11,8 +11,126 @@
   
   <link rel="stylesheet" href="style.css">
   <script src="index.js" defer></script>
-  <script src="js/product.js" defer></script>
+  <!-- <script src="js/product.js" defer></script> -->
   <link rel="stylesheet" href="product.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F8E1E6;
+      color: #333;
+    }
+
+    .product-container {
+      background: #EDEDED;
+      border-radius: 1rem;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .product-img {
+      border-radius: 1rem;
+      max-height: 400px;
+      object-fit: contain;
+      background: #f9f9f9;
+    }
+
+    .product-title {
+      font-weight: 700;
+      font-size: 2rem;
+      /* color: #C2185B; */
+      color: #333333;
+    }
+
+    .price-tag {
+      /* color: #880E4F; */
+      color: #A63A8C;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .spec-table td {
+      padding: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .description-box {
+      background-color: #F8E1E6;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border-left: 5px solid #A63A8C;
+      color: #333333;
+    }
+
+    .reserve-btn {
+      background-color: #A63A8C;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .reserve-btn:hover {
+      background-color: #8A2E73;
+      color: #333;
+    }
+
+    #variantSelector img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  object-fit: cover;
+  transition: border-color 0.3s ease;
+}
+
+#variantSelector img.selected {
+  border-color: #C2185B;
+}
+
+
+
+.suggest-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.suggest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.suggest-img {
+  height: 300px;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggest-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.suggest-card:hover img {
+  transform: scale(1.05);
+}
+
+
+
+  </style>
   
 
 
@@ -58,47 +176,326 @@
   </div>
 </nav>
 
-<section class="py-5" style="background-color: #fff0f5;">
-  <div class="container">
-    <div class="row g-5 align-items-center">
+<!-- PRODUCT DETAIL PAGE: Displays individual product details -->
+<!-- Filename: product.html -->
 
-      <!-- Product Image -->
-      <div class="col-lg-6">
-        <div class="rounded-4 overflow-hidden shadow-sm position-relative">
-          <img id="product-image" src="img/sample.jpg" alt="Product Image" class="img-fluid w-100 product-img" />
-          <span class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Popular</span>
-        </div>
+
+  
+</head>
+<body>
+
+<div class="container py-5">
+  <div class="product-container mx-auto" style="max-width: 1000px;">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6">
+        <img id="productImage" src="" alt="Product Image" class="w-100 product-img">
+        <div id="variantSelector" class="d-flex gap-2 mt-3"></div>
+
       </div>
-
-      <!-- Product Content -->
-      <div class="col-lg-6">
-        <div class="mb-4">
-          <h1 id="product-title" class="fw-bold text-dark display-5 mb-3">Luxury Event Canopy</h1>
-          <p id="product-description" class="text-muted fs-5 mb-4">
-            Crafted for elegance and durability, this white canopy transforms any space into a premium event experience. Ideal for weddings, galas, and luxury functions.
-          </p>
-
-          <ul class="list-unstyled text-muted fs-6 mb-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-danger me-2"></i> Seats up to 80 guests comfortably</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-danger me-2"></i> UV-protected & waterproof material</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-danger me-2"></i> Elegant white finish with golden trims</li>
-          </ul>
-        </div>
-
-        <div class="d-flex flex-column flex-md-row gap-3">
-          <a id="whatsapp-link" href="https://wa.me/13462560142?text=Hi%2C%20I%20want%20to%20rent%20equipment%20for%20my%20event" target="_blank" class="btn btn-danger px-4 py-3 rounded-pill fs-5">
-            <i class="bi bi-whatsapp me-2"></i> Rent via WhatsApp
-          </a>
-          <a href="tel:+13462560142" class="btn btn-outline-dark px-4 py-3 rounded-pill fs-5">
-            <i class="bi bi-telephone me-2"></i> Call to Book
-          </a>
-        </div>
+      <div class="col-md-6">
+        <h1 class="product-title" id="productTitle"></h1>
+        <p class="price-tag" id="productPrice"></p>
+        <table class="table table-borderless spec-table" id="specTable">
+          <!-- Specs go here -->
+        </table>
+        <a href="contact.html" class="btn reserve-btn mt-3">Contact Us to Reserve</a>
       </div>
     </div>
+    <div class="mt-4">
+      <h5 class="text-uppercase fw-bold" style="color:#A63A8C">Product Description</h5>
+      <div class="description-box" id="productDescription"></div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- Product Details Page -->
+<div class="mt-5 pb-5">
+  <h4 class="text-center fw-bold mb-4" style="color:#A63A8C;">Other Products You May Like</h4>
+  <div class="container">
+    <div id="otherProducts" class="row justify-content-center g-4 px-2 px-md-3"></div>
+  </div>
+</div>
+
+
+
+<script>
+  const products = {
+  chair1: {
+    title: "Chiavari Gold Chair",
+    price: "$4",
+    image: "img/chairs/t20.jpg",
+    description: "Our Gold Chiavari chairs are more than just seating; they are a statement piece that elevates the entire event ambiance...",
+    specs: {
+      "Weight": "9lb",
+      "Height": "16\"",
+      "Width": "16\"",
+      "Seat Color": "White",
+      "Seat Type": "Cushion"
+    },
+    variants: [
+    { color: "Gold", image: "img/chairs/t18.png" },
+    { color: "White", image: "img/chairs/t6.png" },
+    // { color: "Black", image: "img/chairs/t1-black.jpg" }
+  ]
+
+  },
+  chair2: {
+    title: "Fan Back Folding Chair",
+    price: "$1.50",
+    image: "img/chairs/t2.png",
+    description: "Our Fan back chairs are more than just functional seating; they are a design statement that enhances the aesthetic appeal of any space...",
+    specs: {
+      "Weight": "7lb",
+      "Color": "White"
+    }
+  },
+
+table1: {
+    title: "6 Foot Rectangular Table",
+    price: "$10",
+    image: "img/chairs/t4.jpg",
+    description: "Rent a 6ft commercial Rectangular folding Table for $10 each, this table can accommodate 6 chairs or 8 chairs using the ends of table.",
+    specs: {
+      "Table Length": "6ft",
+      "Shape": "Rectangular",
+      "Seats": "6-8 people",
+      "Material": "Commercial-grade plastic",
+      "Foldable": "Yes"
+    }
+  },
+  table2: {
+    title: "8 Foot Rectangular Table",
+    price: "$12",
+    image: "img/chairs/t4.jpg",
+    description: "Rent 8ft commercial rectangular Table for $12 each. This table can accommodate 8 chairs or 10 chairs using the ends of table, works great for serving buffet.",
+    specs: {
+      "Table Length": "8ft",
+      "Shape": "Rectangular",
+      "Seats": "8-10 people",
+      "Material": "Commercial-grade plastic",
+      "Ideal For": "Buffet setup"
+    }
+  },
+  table3: {
+    title: "60in or 5 Foot Round Table",
+    price: "$13",
+    image: "img/chairs/t4.jpg",
+    description: "Rent a 5ft(60in) commercial Round Table for $13. This table can accommodate 6-8 chairs.",
+    specs: {
+      "Table Diameter": "60in (5ft)",
+      "Shape": "Round",
+      "Seats": "6-8 people",
+      "Material": "Commercial-grade plastic",
+      "Usage": "Banquets, Parties"
+    }
+  },
+  table4: {
+    title: "72in or 6ft Commercial Grade Round Table",
+    price: "$15",
+    image: "img/chairs/t4.jpg",
+    description: "This table can accommodate 8-10 chairs.",
+    specs: {
+      "Table Diameter": "72in (6ft)",
+      "Shape": "Round",
+      "Seats": "8-10 people",
+      "Material": "Commercial-grade plastic",
+      "Use Case": "Weddings, Large Gatherings"
+    }
+  },
+
+  tableCollection: {
+  title: "Table Collection",
+  price: "", // leave blank or put "Varies"
+  image: "img/chairs/tables-collection.jpg", // shared image for all
+  description: "Browse our selection of rental tables. Choose a table from the dropdown below to view individual details.",
+  specs: {},
+  collection: ["table1", "table2", "table3", "table4"]
+},
+
+  conc1: {
+    title: "Popcorn Machine",
+    price: "$70",
+    image: "img/conc/conc2.jpg",
+    description: "Rent this old fashioned 60-inch-tall Commercial High Production Popcorn Machine with the Cart. This top of the line machine pops 147 one-ounce bags per hour...",
+    specs: {
+      "Power": "1420W / 12 Amps",
+      "Includes": "50 popcorn bags + kits",
+      "Add-on": "$10 for 25 extra kits"
+    },
+
+  
+
+  },
+  conc2: {
+    title: "Cotton Candy Machine",
+    price: "$75",
+    image: "img/conc/conc1.png",
+    description: "Rent a High Production Commercial Cotton Candy machine. Perfect for any fun event.",
+    specs: {
+      "Power": "110V",
+      "Includes": "Sugar sticks",
+      "Capacity": "Up to 50 servings per hour"
+    }
+  },
+  heating1: {
+    title: "Waycool Cooler",
+    price: "$100",
+    image: "img/heating&cooling/Waycool.png",
+    description: "Powerful cooling solution for large event spaces, ensuring guest comfort.",
+    specs: {
+      "Power": "1200W",
+      "Capacity": "5000 BTU",
+      "Dimensions": "40in x 20in x 25in"
+    }
+  },
+  bounce1: {
+    title: "Standard Bounce House",
+    price: "$120",
+    image: "img/bounce/bounce2.png",
+    description: "Fun and safe bounce house for parties of all ages.",
+    specs: {
+      "Size": "15ft x 15ft",
+      "Material": "Heavy-duty vinyl",
+      "Max Occupancy": "6 children"
+    }
+  },
+  tent1: {
+    title: "20x20 Frame Tent",
+    price: "$200",
+    image: "img/tents/tent8.jpg",
+    description: "Commercial grade 20x20 frame tent. Includes setup.",
+    specs: {
+      "Size": "20ft x 20ft",
+      "Material": "Water-resistant polyester",
+      "Includes": "Setup and teardown"
+    }
+  },
+  yard1: {
+    title: "Birthday Yard Sign",
+    price: "$50",
+    image: "img/yardsign/yard3.jpg",
+    description: "Custom birthday yard sign for a special celebration.",
+    specs: {
+      "Material": "Weather-resistant corrugated plastic",
+      "Size": "24in x 36in",
+      "Customization": "Personalized text and colors"
+    }
+  }
+};
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+const product = products[productId];
+
+const productImage = document.getElementById("productImage");
+const productTitle = document.getElementById("productTitle");
+const productPrice = document.getElementById("productPrice");
+const productDescription = document.getElementById("productDescription");
+const specTable = document.getElementById("specTable");
+const variantSelector = document.getElementById("variantSelector");
+
+function renderProduct(item) {
+  productImage.src = item.image;
+  productTitle.textContent = item.title;
+  productPrice.textContent = item.price;
+  productDescription.textContent = item.description;
+
+  specTable.innerHTML = '';
+  Object.entries(item.specs || {}).forEach(([key, value]) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td class="fw-semibold">${key}</td><td>${value}</td>`;
+    specTable.appendChild(row);
+  });
+}
+
+if (!product) {
+  document.body.innerHTML = '<div class="container text-center py-5"><h3>Product not found.</h3></div>';
+} else if (product.collection) {
+  // It's a grouped product (like tableCollection)
+  variantSelector.style.display = 'flex';
+  variantSelector.innerHTML = '';
+
+  product.collection.forEach((id, idx) => {
+    const item = products[id];
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+    img.title = item.title;
+    if (idx === 0) img.classList.add('selected');
+
+    img.addEventListener('click', () => {
+      renderProduct(item);
+      Array.from(variantSelector.children).forEach(child => child.classList.remove('selected'));
+      img.classList.add('selected');
+    });
+
+    variantSelector.appendChild(img);
+  });
+
+  // Show first product by default
+  const firstItem = products[product.collection[0]];
+  renderProduct(firstItem);
+} else {
+  // Single product
+  renderProduct(product);
+
+  // If it has variants
+  if (product.variants && product.variants.length > 0) {
+    variantSelector.style.display = 'flex';
+    variantSelector.innerHTML = '';
+
+    product.variants.forEach((variant, idx) => {
+      const img = document.createElement('img');
+      img.src = variant.image;
+      img.alt = variant.color;
+      if (idx === 0) img.classList.add('selected');
+
+      img.addEventListener('click', () => {
+        productImage.src = variant.image;
+        Array.from(variantSelector.children).forEach(child => child.classList.remove('selected'));
+        img.classList.add('selected');
+      });
+
+      variantSelector.appendChild(img);
+    });
+  } else {
+    variantSelector.style.display = 'none';
+  }
+}
+
+// Other product suggestions
+const allProductList = Object.entries(products).filter(([id, p]) => id !== productId);
+const suggestions = allProductList.slice(0, 3);
+const otherProductsContainer = document.getElementById("otherProducts");
+
+suggestions.forEach(([id, prod]) => {
+  const col = document.createElement("div");
+  col.className = "col-12 col-sm-6 col-md-4";
+
+  col.innerHTML = `
+    <a href="product.html?id=${id}" class="text-decoration-none">
+      <div class="suggest-card shadow-sm h-100">
+        <div class="suggest-img">
+          <img src="${prod.image}" alt="${prod.title}">
+        </div>
+        <div class="p-3">
+          <h6 class="fw-bold text-dark mb-1">${prod.title}</h6>
+          <p class="text-muted mb-1">${prod.price}</p>
+          <p class="small text-secondary">${prod.description?.substring(0, 60)}...</p>
+        </div>
+      </div>
+    </a>
+  `;
+  otherProductsContainer.appendChild(col);
+});
+</script>
+
+
+  
+
+
+
+
 
    <footer class="site-footer">
     <div class="footer-container">
@@ -125,9 +522,8 @@
         <h3>Contact Us</h3>
         <p>Email: <a href="mailto:crescenteventsandrentals@gmail.com">crescenteventsandrentals@gmail.com</a></p>
         <p>Phone: <a href="tel:+13462560142">+13462560142</a></p>
-        <a href="https://wa.me/13462560142" class="whatsapp-btn" target="_blank">
-          <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
-          Chat on WhatsApp
+        <a style="color: #EDEDED;" href="contact.html" class="whatsapp-btn" target="_blank">
+          <img src="https://img.icons8.com/color/48/sms.png" alt="sms" />Request a quote
         </a>
       </div>
     </div>

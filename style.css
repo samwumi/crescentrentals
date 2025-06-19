@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #f06292;
+  --primary-color: #ffe5e5;
   --accent-color: #fdd835;
-  --deep-pink: #ad1457;
+  --deep-pink: #A63A8C;
   --text-light: #ffffff;
-  --text-dark: #212121;
+  --text-dark: #333333;
   --light-pink: #fce4ec;
   --hover-pink: #f15b9c;
   --shadow: rgba(0, 0, 0, 0.1);
@@ -11,13 +11,18 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--primary-color);
+  background-color: #F8E1E6;
   color: var(--text-dark);
  
 }
 
+/* h2{
+  color:  #b3005a !important;
+} */
+
 .navbar {
   background-color: var(--deep-pink);
+  color: #EDEDED;
 }
 
 .navbar-brand {
@@ -36,20 +41,28 @@ body {
   color: var(--accent-color) !important;
 }
 
+#heroCarousel{
+  background: linear-gradient(to bottom, #A63A8C, 15%, #EDEDED 40%);
+  overflow: hidden;
+}
 /* Carousel height for different devices */
 .carousel-item {
   height: 90vh;
 }
 
+
+
 @media (max-width: 768px) {
   .carousel-item {
     height: 70vh;
   }
-  .carousel-caption h1 {
+  .carousel-title {
     font-size: 1.75rem;
+    color: #333333;
   }
   .carousel-caption p {
     font-size: 1rem;
+    color: #666666;
   }
   .btn-whatsapp {
     padding: 0.6rem 1.2rem;
@@ -67,11 +80,14 @@ body {
 /* Carousel caption background and alignment */
 .carousel-caption {
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.85);
+  background: #FFFFFF;
   border-radius: 0.75rem;
   max-width: 90%;
   text-align: center;
-  box-shadow: 0 4px 10px var(--shadow);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border: 1px solid #EDEDED;
+  text-align: center;
+  z-index: 2;
 }
 
 /* Heading styling */
@@ -89,30 +105,86 @@ body {
 }
 
 /* Pink WhatsApp Button */
-.btn-whatsapp {
-  background-color: var(--primary-color);
+.carousel-item .btn-whatsapp {
+  background-color: #B856A0;
   color: var(--text-light);
-  padding: 0.75rem 1.5rem;
+  padding: 0.94rem 1.9rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 25px;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  
 }
 
 .btn-whatsapp:hover {
-  background-color: var(--hover-pink);
+  background-color: #C67AB2;
   transform: scale(1.05);
   color: var(--text-light);
 }
 
+/* .hero-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(166, 58, 140, 0.1);
+  z-index: 1;
+} */
+
 /* Carousel controls styling */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: var(--deep-pink);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
+  top: 50%;
+  width: 40px;
+  height: 40px;
   padding: 1rem;
+  transform: translateY(-50%);
+  border: 2px solid #FFFFFF;
+  opacity: 1;
+  z-index: 3;
 }
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+#services{
+  /* background-color: #F5E8C7; */
+  background-color: #EDEDED;
+}
+
+#services h2{
+  color: #4A4A4A;
+}
+
+#services h5{
+  
+  color: #666666;
+  font-size: medium;
+  font-weight: 500px;
+  margin-top: 10px;
+}
+
 
 .service-card {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -137,7 +209,7 @@ body {
 }
 
 .service-img {
-  height: 100%;
+  height: 350px;
   width: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -182,6 +254,23 @@ body {
   transform: scale(1.05);
 }
 
+
+@media (max-width: 768px) {
+  #services {
+    
+  }
+}
+
+
+
+
+#how-it-works h2{
+   color: #A63A8C;
+   
+}
+
+
+
 #how-it-works .step-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: var(--light-pink);
@@ -203,6 +292,10 @@ body {
   transform: scale(1.1);
 }
 
+#about h2{
+  color: #A63A8C;
+}
+
 .about-img-wrapper {
   max-height: 400px;
   overflow: hidden;
@@ -221,6 +314,17 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
+#about .btn {
+    background-color: #A63A8C;
+    color: #EDEDED;
+  }
+
+  #about .btn:hover{
+    background-color: #8A2E73;
+    transition: background-color 0.3s;
+  }
+
+
 /* Mobile Layout */
 @media (max-width: 767px) {
   /* Reorder the columns: image comes first, then text and button */
@@ -238,17 +342,23 @@ body {
   }
 }
 
+#gallery h2{
+   color: #A63A8C;
+}
+
 
 .rental-img-wrapper {
   overflow: hidden;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  height: 250px;
+  height: 270px;
   position: relative;
   flex-shrink: 0;
   padding-top: 10px; 
 
 }
+
+
 
 .rental-img-wrapper img {
   object-fit: cover;
@@ -261,8 +371,11 @@ body {
 
 
 .rental-card:hover {
+  /* transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 
@@ -273,6 +386,7 @@ body {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   transition: transform 0.3s ease;
+  
 }
 
 
@@ -281,16 +395,16 @@ body {
 }
 
 .card-img-top {
-  object-fit: cover;
-  height: 200px; /* Adjust height for consistency */
+  object-fit: contain;
+  height: 200px;
 }
 
 
 .rental-card .card-body {
-  background-color: #ffffff;
+  background-color: #EDEDED;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem; 
-  height: 30%;
+  /* height: 30%; */
   padding: 0.75rem;
   display: flex;
   align-items: center;
@@ -299,7 +413,7 @@ body {
 }
 
 .rental-card {
-  height: 250px;
+  /* height: 250px; */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -314,6 +428,7 @@ body {
 
   .rental-card {
     margin-bottom: 20px;
+    background-color: #EDEDED;
   }
 }
 
@@ -326,8 +441,7 @@ body {
 } */
 
 .filter-btn:hover {
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: #8A2E73;
 }
 
 .filter-btn:not(.active) {
@@ -348,6 +462,10 @@ body {
     font-size: 1rem;
   }
 
+  #loadMoreBtn:hover {
+  background-color: #8A2E73;
+  transition: background-color 0.3s;
+}
 
   /* .text-center {
     display: flex;
@@ -365,9 +483,10 @@ body {
 }
 
 .filter-btn.active {
-  background-color: #343a40;
-  color: white;
-  border-color: #343a40;
+  background-color: #A63A8C;
+  color: #EDEDED;
+  border: none;
+  border-radius: 5px;
 }
 
 /* Dropdown appearance refinement */
@@ -388,14 +507,14 @@ body {
 .accordion-button {
   font-size: 18px;
   padding: 15px;
-  background-color: #f8f9fa;
+  background-color: #EDEDED;
   border: 1px solid #dee2e6;
   font-weight: bold;
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #343a40;
-  color: white;
+  background-color: #A63A8C;
+  color: #EDEDED;
 }
 
 .accordion-item {
@@ -460,11 +579,29 @@ body {
   border-radius: 50%;
 }
 
-.contact-section {
-  background: #ffe6f0;
+@media (max-width: 768px) {
+  .testimonial-wrapper h2 {
+    font-size: 26px;
+  }
+
+  .container {
+    text-align: center;
+  }
+}
+
+
+
+
+#contact-section {
+  background: #F8E1E6;
   padding: 60px 20px;
   font-family: 'Segoe UI', sans-serif;
 }
+
+/* .contact-section h2{
+  color: #FFFFFF;
+} */
+
 
 .container {
   max-width: 1100px;
@@ -472,18 +609,13 @@ body {
   text-align: center;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
-}
 
 .contact-wrapper {
   display: flex;
   justify-content: space-between;
   gap: 40px;
   margin-top: 40px;
-  text-align: left;
+  text-align: left !important;
   flex-wrap: wrap;
 }
 
@@ -499,9 +631,10 @@ h2 {
 .contact-form textarea {
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #EDEDED;
   width: 100%;
   font-size: 1rem;
+  color: #333333;
 }
 
 .contact-form textarea {
@@ -510,18 +643,19 @@ h2 {
 }
 
 .contact-form button {
-  background: #c2185b;
-  color: #fff;
+  background: #A63A8C;
+  color: #EDEDED;
   padding: 12px;
   border: none;
   border-radius: 25px;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  border: 2px solid #EDEDED;
 }
 
 .contact-form button:hover {
-  background: #a3144e;
+  background: #8A2E73;
 }
 
 .contact-info {
@@ -532,22 +666,25 @@ h2 {
 .contact-info p {
   margin: 15px 0;
   font-size: 1rem;
+  color: #A63A8C;
 }
 
-.contact-info a {
-  color: #c2185b;
+.contact-info .info {
+  color: #A63A8C;
   text-decoration: none;
 }
 
 .social-icons {
   margin-top: 20px;
+  color: #A63A8C;
 }
 
 .social-icons a {
   margin-right: 15px;
   font-size: 1.2rem;
-  color: #c2185b;
+  color: #A63A8C;
   transition: 0.3s;
+  /* filter: brightness(0) invert(1); */
 }
 
 .social-icons a:hover {
@@ -575,8 +712,10 @@ h2 {
 }
 
 .site-footer {
-  background-color: var(--footer-bg);
-  color: var(--footer-text);
+  background: #EDEDED;
+  color: #333333;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
   padding: 3rem 1.5rem 1rem;
   font-family: 'Segoe UI', sans-serif;
   /* position: absolute;
@@ -585,7 +724,7 @@ h2 {
 } 
 
 .footer-container {
-  background-color: var(--footer-bg);
+  /* background-color: var(--footer-bg); */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -595,13 +734,14 @@ h2 {
 
 .footer-column h2, 
 .footer-column h3 {
-  color: var(--footer-heading);
+  color: #000000;
   margin-bottom: 0.75rem;
+
 }
 
 .footer-column p,
 .footer-column a {
-  color: var(--footer-text);
+  color: #333333;
   font-size: 0.95rem;
   text-decoration: none;
 }
@@ -626,8 +766,8 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem; /* 👈 Controls spacing between icon and text */
-  background-color: var(--whatsapp-green);
-  color: white;
+  background-color: #A63A8C;
+  color: #EDEDED;
   padding: 0.75rem 1.25rem; /* 👈 More room for text on mobile */
   border-radius: 8px;
   margin-top: 1rem;
@@ -637,20 +777,25 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
+.whatsapp-btn a{
+  color: #EDEDED;
+}
+
 .whatsapp-btn img {
   width: 20px;  /* 👈 Resizes the icon */
   height: 20px;
 }
 
 
-.whatsapp-btn img {
+.footer-column a .whatsapp-btn img {
   width: 20px;
   height: 20px;
   margin-right: 8px;
 }
 
 .whatsapp-btn:hover {
-  background-color: #1ebe5d;
+  background-color: #8A2E73;
+   transform: scale(1.1);
 }
 
 .footer-bottom {

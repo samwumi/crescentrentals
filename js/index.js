@@ -1,3 +1,20 @@
+// hero section
+document.querySelectorAll('.carousel-img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `<img src="${img.src}" onclick="this.parentElement.style.display='none'">`;
+        document.body.appendChild(lightbox);
+      });
+    });
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.rental-item');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
@@ -53,3 +70,34 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+
+  const form = document.getElementById('smsForm');
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    try {
+      const response = await fetch('https://hook.us2.make.com/l1ymk1xbu8kxiubpyit5jb5q2icl4hsc', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully!');
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      alert('Error sending message.');
+      console.error(error);
+    }
+  });
+
+

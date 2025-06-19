@@ -1,29 +1,82 @@
-
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
-console.log("Product ID from URL:", productId);  // Log the product ID
-
-fetch("../product.json")
+fetch('../product.json')
   .then(res => res.json())
   .then(products => {
-    console.log("Available Products:", products);  // Log the fetched products
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
     const product = products.find(p => p.id === productId);
 
     if (!product) {
-      document.body.innerHTML = "<h2 class='text-center mt-5'>Product not found</h2>";
+      document.getElementById("productTitle").textContent = "Product Not Found";
       return;
     }
 
-    console.log("Product Found:", product);  // Log the found product details
+    // Populate Main Details
+    document.getElementById("productTitle").textContent = product.title || "Untitled";
+    document.getElementById("productPrice").textContent = product.rental_price || "Price not specified";
+    document.getElementById("productDescription").textContent = product.description || "No description available";
+    document.getElementById("productImage").src = product.image || "img/placeholder.jpg";
+    document.getElementById("productImage").alt = product.title || "Product Image";
 
-    // Update the page with product details
-    document.getElementById("product-title").textContent = product.title;
-    document.getElementById("product-description").textContent = product.description;
-    document.getElementById("product-image").src = product.image;
-    document.getElementById("product-image").alt = product.title;
+    // Specifications
+    document.getElementById("productWeight").textContent = product.weight || "N/A";
+    document.getElementById("productHeight").textContent = product.height || "N/A";
+    document.getElementById("productWidth").textContent = product.width || "N/A";
+    document.getElementById("productSeatColor").textContent = product.seat_color || "N/A";
+    document.getElementById("productSeatType").textContent = product.seat_type || "N/A";
 
-    // Update WhatsApp link
+    // Included items
+    document.getElementById("productIncluded").innerHTML =
+      product.included?.map(item => `<li>${item}</li>`).join("") || "<li>None listed</li>";
+
+    // Optional Add-ons
+    document.getElementById("productOptionalAddons").innerHTML =
+      product.optional_add_ons?.map(item => `<li>${item}</li>`).join("") || "<li>None listed</li>";
+
+    // Customer Provides
+    document.getElementById("productCustomerProvides").innerHTML =
+      product.customer_provides?.map(item => `<li>${item}</li>`).join("") || "<li>Nothing specified</li>";
+
+    // Syrup Flavors
+    document.getElementById("productSyrupFlavors").innerHTML =
+      product.syrup_flavors?.map(flavor => `<li>${flavor}</li>`).join("") || "<li>Not applicable</li>";
+
+    // Comparison Section
+    if (product.comparison) {
+      document.querySelector(".comparison").style.display = "block";
+      document.getElementById("snowConeText").textContent = product.comparison.snow_cone || "";
+      document.getElementById("shavedIceText").textContent = product.comparison.shaved_ice || "";
+    } else {
+      document.querySelector(".comparison").style.display = "none";
+    }
+
+    // WhatsApp Link
+    const number = "234XXXXXXXXXX"; // Replace with real number
     document.getElementById("whatsapp-link").href =
-      `https://wa.me/234XXXXXXXXXX?text=I'm%20interested%20in%20renting%20the%20${encodeURIComponent(product.title)}`;
+      `https://wa.me/${number}?text=I'm%20interested%20in%20renting%20the%20${encodeURIComponent(product.title)}`;
+
+    // Optional: Load other products section (if needed)
+    // You can filter or display related items here based on category
+
   })
-  .catch(err => console.error("Error fetching products.json:", err));  // Catch fetch errors
+  .catch(error => {
+    console.error("Error loading product data:", error);
+    document.getElementById("productTitle").textContent = "Failed to load product.";
+  });
+
+
+
+fetch("../product.json")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("related-products");
+    data.forEach(product => {
+      container.innerHTML += `
+        <div class="col-md-4">
+          <a href="${product.link}">
+            <img src="${product.image}" class="img-fluid" alt="${product.title}">
+            <p>${product.title}</p>
+          </a>
+        </div>`;
+    });
+  });

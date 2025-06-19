@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rental Hub</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Other head elements... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="js/index.js" defer></script>
+<!-- Filename: category.html -->
+
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FDEFF4;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(194, 24, 91, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .product-img-wrapper {
+      height: 340px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card h5 {
+      color: #880E4F;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo1.png" alt="Logo" style="height: 50px; width: auto;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#about">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#services">How it works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#testimonials">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contact">Contact</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<div class="container py-5">
+  <h2 class="text-center mb-5 fw-bold" style="color: #C2185B;">Category: <span id="categoryName"></span></h2>
+  <div id="productList" class="row g-4 justify-content-center"></div>
+</div>
+
+<script>
+  // Sample product data (replace with dynamic fetch or extended JSON if needed)
+  const allProducts = {
+  chairs_and_tables: [
+  {
+    id: "chair1",
+    title: "Chiavari Gold Chair",
+    price: "$4",
+    description: "Our Gold Chiavari chairs are more than just seating; they are a statement piece that elevates the entire event ambiance.",
+    image: "img/chairs/t20.jpg"
+  },
+  {
+    id: "chair2",
+    title: "Fan Back Folding Chair",
+    price: "$1.50",
+    description: "Our Fan back chairs are more than just functional seating; they enhance the aesthetic appeal of any space.",
+    image: "img/chairs/t2.png"
+  },
+  {
+    id: "tableCollection",
+    title: "Table Collection",
+    price: "", // optional
+    description: "Browse our different rental table types in one place.",
+    image: "img/chairs/t4.jpg"
+  }
+],
+
+  concessions: [
+    {
+      id: "conc1",
+      title: "Popcorn Machine",
+      price: "$70",
+      description: "Rent this old fashioned 60-inch-tall Commercial High Production Popcorn Machine with the Cart. Pops 147 one-ounce bags per hour.",
+      image: "img/conc/conc2.jpg"
+    },
+    {
+      id: "conc2",
+      title: "Cotton Candy Machine",
+      price: "$75",
+      description: "Rent a High Production Commercial Cotton Candy machine. Perfect for any fun event.",
+      image: "img/conc/conc1.png"
+    }
+  ],
+  heating_cooling: [
+    {
+      id: "heating1",
+      title: "Waycool Cooler",
+      price: "$100",
+      description: "Powerful cooling solution for large event spaces, ensuring guest comfort.",
+      image: "img/heating&cooling/Waycool.png"
+    }
+  ],
+  bounce_house: [
+    {
+      id: "bounce1",
+      title: "Standard Bounce House",
+      price: "$120",
+      description: "Fun and safe bounce house for parties of all ages.",
+      image: "img/bounce/bounce2.png"
+    }
+  ],
+  event_tents: [
+    {
+      id: "tent1",
+      title: "20x20 Frame Tent",
+      price: "$200",
+      description: "Commercial grade 20x20 frame tent. Includes setup.",
+      image: "img/tents/tent8.jpg"
+    }
+  ],
+  yard_signs: [
+    {
+      id: "yard1",
+      title: "Birthday Yard Sign",
+      price: "$50",
+      description: "Custom birthday yard sign for a special celebration.",
+      image: "img/yardsign/yard3.jpg"
+    }
+  ]
+};
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryId = urlParams.get("id");
+  const productList = document.getElementById("productList");
+  const categoryName = document.getElementById("categoryName");
+
+  if (categoryId && allProducts[categoryId]) {
+    categoryName.textContent = allProducts[categoryId][0].title.includes("Chair") ? "Chairs and Tables" : categoryId.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    allProducts[categoryId].forEach(product => {
+      const col = document.createElement("div");
+      col.className = "col-12 col-sm-6 col-lg-4";
+      col.innerHTML = `
+     <a href="${product.id === 'tableCollection' ? 'product.html?id=tableCollection' : 'product.html?id=' + product.id}" class="text-decoration-none">
+        <div class="product-card h-100 d-flex flex-column">
+            <div class="product-img-wrapper">
+              <img src="${product.image}" alt="${product.title}" />
+            </div>
+            <div class="p-3">
+              <h5>${product.title}</h5>
+              <p class="mb-2">${product.price}</p>
+              <p>${product.description.substring(0, 80)}...</p>
+            </div>
+          </div>
+        </a>
+      `;
+      productList.appendChild(col);
+    });
+  } else {
+    productList.innerHTML = '<div class="col-12 text-center"><p>No products found.</p></div>';
+  }
+</script>
+
+<footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand">
+        <img 
+          src="img/logo1.png" 
+          alt="Crescent Event & Rentals Logo" 
+          style="max-width: 180px; width: 100%; height: auto;" 
+        />
+        <p>Creating unforgettable moments — from planning to execution, all in one place.</p>
+      </div>
+  
+      <div class="footer-column links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#services">How It Works</a></li>
+          <li><a href="#testimonial">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column contact">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:crescenteventsandrentals@gmail.com">crescenteventsandrentals@gmail.com</a></p>
+        <p>Phone: <a href="tel:+13462560142">+13466130074</a></p>
+        <a style="color: #EDEDED;" href="contact.html" class="whatsapp-btn" target="_blank">
+          <img src="https://img.icons8.com/color/48/sms.png" alt="sms" />Request a quote
+        </a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Crescent Event & Rentals. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+</body>
+</html>

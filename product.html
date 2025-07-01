@@ -141,7 +141,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="img/logo1.png" alt="Logo" style="height: 50px; width: auto;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -232,9 +232,10 @@
       "Seat Type": "Cushion"
     },
     variants: [
+    { color: "Black", image: "img/chairs/t20.jpg" },
     { color: "Gold", image: "img/chairs/t18.png" },
     { color: "White", image: "img/chairs/t6.png" },
-    // { color: "Black", image: "img/chairs/t1-black.jpg" }
+    
   ]
 
   },
@@ -291,14 +292,14 @@ table1: {
   table4: {
     title: "72in or 6ft Commercial Grade Round Table",
     price: "$15",
-    image: "img/chairs/t4.jpg",
+    image: "img/chairs/t15.png",
     description: "This table can accommodate 8-10 chairs.",
     specs: {
       "Table Diameter": "72in (6ft)",
       "Shape": "Round",
       "Seats": "8-10 people",
       "Material": "Commercial-grade plastic",
-      "Use Case": "Weddings, Large Gatherings"
+      "Use Case": "Weddings, Meetings or Large Gatherings"
     }
   },
 
@@ -320,7 +321,13 @@ table1: {
       "Power": "1420W / 12 Amps",
       "Includes": "50 popcorn bags + kits",
       "Add-on": "$10 for 25 extra kits"
+      
     },
+    variants: [
+    { color: "Gold", image: "img/conc/conc2.jpg" },
+    { color: "White", image: "img/conc/conc4.png" },
+    // { color: "Black", image: "img/chairs/t1-black.jpg" }
+  ]
 
   
 
@@ -334,8 +341,31 @@ table1: {
       "Power": "110V",
       "Includes": "Sugar sticks",
       "Capacity": "Up to 50 servings per hour"
+    },
+
+    variants: [
+    { color: "Gold", image: "img/conc/conc1.png" },
+    { color: "White", image: "img/conc/conc5.jpg" },
+    // { color: "Black", image: "img/chairs/t1-black.jpg" }
+  ]
+
+  },
+
+  conc3: {
+    title: "Snow Cone Machine",
+    price: "$65",
+    image: "img/conc/conc3.png",
+    description: "Beat the heat and delight your guests with our fun and easy-to-use Snow Cone Machine! This party essential creates refreshing, icy treats in seconds — just add ice and syrup! With its bright design and efficient shaving blades, it's perfect for birthdays, school fairs, fundraisers, and summer gatherings. Kids and adults alike will enjoy customizing their cones with colorful flavors for a cool treat everyone will love!",
+    specs: {
+      "Type": "Electric Ice Shaver",
+      "Output": "Quick Ice Shaving",
+      "Includes": "Syrup not included",
+      "Ideal For": "Summer Parties, Fairs, Fundraisers",
+      "Ease of Use": "Add ice and flavor, done!"
     }
   },
+
+
   heating1: {
     title: "Waycool Cooler",
     price: "$100",
@@ -350,7 +380,7 @@ table1: {
   bounce1: {
     title: "Standard Bounce House",
     price: "$120",
-    image: "img/bounce/bounce2.png",
+    image: "img/bounce/bounce2.jpg",
     description: "Fun and safe bounce house for parties of all ages.",
     specs: {
       "Size": "15ft x 15ft",
@@ -358,6 +388,20 @@ table1: {
       "Max Occupancy": "6 children"
     }
   },
+
+    bounce2: {
+    title: "Standard Bounce House",
+    price: "$120",
+    image: "img/bounce/bounce1.jpg",
+    description: "Fun and safe bounce house for parties of all ages.",
+    specs: {
+      "Size": "15ft x 15ft",
+      "Material": "Heavy-duty vinyl",
+      "Max Occupancy": "6 children"
+    }
+  },
+
+
   tent1: {
     title: "20x20 Frame Tent",
     price: "$200",
@@ -371,14 +415,21 @@ table1: {
   },
   yard1: {
     title: "Birthday Yard Sign",
-    price: "$50",
     image: "img/yardsign/yard3.jpg",
     description: "Custom birthday yard sign for a special celebration.",
     specs: {
       "Material": "Weather-resistant corrugated plastic",
       "Size": "24in x 36in",
       "Customization": "Personalized text and colors"
-    }
+    },
+
+    variants: [
+    { color: "Black", image: "img/yardsign/yard3.jpg" },
+    { color: "Gold", image: "img/yardsign/yard4.jpg" },
+    { color: "White", image: "img/yardsign/yard1.jpg" },
+    { color: "White", image: "img/yardsign/yard7.jpg" },
+    
+  ]
   }
 };
 

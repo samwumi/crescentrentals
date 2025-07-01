@@ -80,7 +80,7 @@ body {
 /* Carousel caption background and alignment */
 .carousel-caption {
   padding: 1.5rem;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.7); /* 70% white with 30% transparency */
   border-radius: 0.75rem;
   max-width: 90%;
   text-align: center;

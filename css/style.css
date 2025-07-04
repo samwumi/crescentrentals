@@ -186,73 +186,84 @@ body {
 }
 
 
-.service-card {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 1rem;
 
-}
+#our-rentals .service-card {
+    box-shadow: 0 8px 20px rgba(194, 24, 91, 0.3);
+    border-radius: 1rem;
+    overflow: hidden;
+    background: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    height: 400px;
+  }
+  #our-rentals .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(194, 24, 91, 0.5);
+  }
+  #our-rentals .service-card .image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+  #our-rentals .service-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  #our-rentals .service-card:hover img {
+    transform: scale(1.1);
+  }
 
-
-.image-wrapper {
-   /* border-top-left-radius: 12px;
-  border-top-right-radius: 12px;  */
-  flex: 1 ;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-
-}
-
-.service-img {
-  height: 350px;
+  .card-img-top {
+  height: 200px;        /* fixed height */
   width: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  object-position: center;
-  display: block;
-
+  object-fit: contain;  /* scale image to fit inside container without cropping */
+  background-color: #f8f8f8; /* optional, to fill blank space */
 }
 
 
 
+  #our-rentals .overlay {
+    position: absolute;
+    top:0; left:0;
+    width: 100%; height: 100%;
+    background: rgba(194, 24, 91, 0.6);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: opacity 0.3s ease;
+    border-radius: 1rem 1rem 0 0;
+  }
+  #our-rentals .service-card:hover .overlay {
+    opacity: 1;
+  }
+  #our-rentals h5 {
+    margin: 1rem 1rem 0.25rem 1rem;
+    font-weight: 700;
+    color: #880E4F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+  }
+  #our-rentals p {
+    margin: 0 1rem 1rem 1rem;
+    color: #555;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  @media (max-width: 767px) {
+    #our-rentals .service-card .image-wrapper {
+      height: 150px;
+    }
+  }
 
-.service-card {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-card .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.overlay span {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 8px 16px;
-  border-radius: 8px;
-}
-
-.service-card:hover .overlay {
-  opacity: 1;
-}
-
-.service-card:hover .service-img {
-  transform: scale(1.05);
-}
 
 
 @media (max-width: 768px) {
@@ -260,6 +271,9 @@ body {
     
   }
 }
+
+
+
 
 
 

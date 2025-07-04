@@ -1,533 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rental Hub</title>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Other head elements... -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  
-  <link rel="stylesheet" href="style.css">
-  <script src="js/index.js" defer></script>
 
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Other head elements... -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/index.js" defer></script>
+  <script src="js/load-heade-footer.js" defer></script>
 </head>
+
 <body>
 
-<main id="container"> 
-  <div id="content-wrapper">
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <img src="img/logo1.png" alt="Logo" style="height: 50px; width: auto;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
+  <div id="header-placeholder"></div>
+
+
+
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Carousel Items -->
+      <div class="carousel-item active">
+        <img src="img/hero1.jpg" class="d-block w-100 carousel-img" alt="Event Setup">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
+          <h1 class="carousel-title" style="color: #333333;">Functional Tables, Flawless Events</h1>
+          <p class="carousel-text" style="color: #666666;">Set the scene for memorable moments with our sturdy and
+            versatile tables—perfect for dining, displays, or décor.</p>
+          <a href="contact.html" class="btn btn-whatsapp">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="img/hero4.jpg" class="d-block w-100 carousel-img" alt="Party Rentals">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
+          <h1 class="carousel-title" style="color: #333333;">Turn Moments into Memories!</h1>
+          <p class="carousel-text" style="color: #666666;">Bring your event to life with vibrant balloon décor,
+            delicious popcorn, icy snow cones, and complete party setups—all in one place. Fun, flavor, and flair for
+            every celebration.</p>
+          <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="img/hero3.jpg" class="d-block w-100 carousel-img" alt="Party Rentals">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
+          <h1 class="carousel-title" style="color: #333333;">Elegant Seating for Every Occasion</h1>
+          <p class="carousel-text" style="color: #666666;">Whether it's a wedding or backyard gathering, our stylish
+            chairs bring comfort and charm to every seat at the table.</p>
+          <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="img/hero2.jpg" class="d-block w-100 carousel-img" alt="Party Rentals">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
+          <h1 class="carousel-title" style="color: #333333;">Make an Outdoor Statement!</h1>
+          <p class="carousel-text" style="color: #666666;">Turn heads and spread smiles with vibrant yard signs—ideal
+            for birthdays, celebrations, and unforgettable announcements.</p>
+          <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="img/tents/tent7.png" class="d-block w-100 carousel-img" alt="Party Rentals">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
+          <h1 class="carousel-title" style="color: #333333;">Celebrate in Style, Comfort, and Class!</h1>
+          <p class="carousel-text" style="color: #666666;">From elegant décor to cozy seating, we create the perfect
+            atmosphere for your special day. Every detail — from the chairs to the tables — is designed to make your
+            event unforgettable for you and your guests.</p>
+          <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#about">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#services">How it works</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#gallery">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#testimonial">Testimonials</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#contact">Contact</a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-</nav>
-
-
-<!-- Hero Carousel -->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-
-    <!-- Carousel Items -->
-    <div class="carousel-item active">
-      <img src="img/bounce/bounce1.jpg" class="d-block w-100 carousel-img" alt="Event Setup">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
-        <h1 class="carousel-title" style="color: #333333;">Jump Into the Fun!</h1>
-        <p class="carousel-text" style="color: #666666;">Add energy to your party with our colorful bounce houses—safe, exciting, and guaranteed to keep the kids laughing all day.</p>
-        <a href="contact.html" class="btn btn-whatsapp">Request a Quote</a>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="img/hero1.jpg" class="d-block w-100 carousel-img" alt="Party Rentals">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
-        <h1 class="carousel-title" style="color: #333333;">Functional Tables, Flawless Events</h1>
-        <p class="carousel-text" style="color: #666666;">Set the scene for memorable moments with our sturdy and versatile tables—perfect for dining, displays, or décor.</p>
-        <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="img/hero3.jpg" class="d-block w-100 carousel-img" alt="Party Rentals">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
-        <h1 class="carousel-title" style="color: #333333;">Elegant Seating for Every Occasion</h1>
-        <p class="carousel-text" style="color: #666666;">Whether it's a wedding or backyard gathering, our stylish chairs bring comfort and charm to every seat at the table.</p>
-        <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="img/hero2.jpg" class="d-block w-100 carousel-img" alt="Party Rentals">
-      <div class="hero-overlay"></div>
-      <div class="carousel-caption text-center d-flex flex-column align-items-center justify-content-center">
-        <h1 class="carousel-title" style="color: #333333;">Make an Outdoor Statement!</h1>
-        <p class="carousel-text" style="color: #666666;">Turn heads and spread smiles with vibrant yard signs—ideal for birthdays, celebrations, and unforgettable announcements.</p>
-        <a href="contact.html" class="btn btn-whatsapp">Rent Now</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-
-
-<!-- Our Rentals Section -->
-<section id="our-rentals" class="py-5" style="background-color: #EDEDED;">
-  <div class="container text-center">
-    <h2 class="mb-5 fw-bold" style="color: #A63A8C; font-family: 'Poppins', sans-serif;">Explore Our Party Rentals</h2>
-    <div id="rentalsGrid" class="row g-4 justify-content-center"></div>
-  </div>
-</section>
-
-<style>
-  #our-rentals .service-card {
-    box-shadow: 0 8px 20px rgba(194, 24, 91, 0.3);
-    border-radius: 1rem;
-    overflow: hidden;
-    background: white;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    height: 400px;
-  }
-  #our-rentals .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(194, 24, 91, 0.5);
-  }
-  #our-rentals .service-card .image-wrapper {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-  }
-  #our-rentals .service-card img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-  #our-rentals .service-card:hover img {
-    transform: scale(1.1);
-  }
-
-  .card-img-top {
-  height: 200px;        /* fixed height */
-  width: 100%;
-  object-fit: contain;  /* scale image to fit inside container without cropping */
-  background-color: #f8f8f8; /* optional, to fill blank space */
-}
-
-
-
-  #our-rentals .overlay {
-    position: absolute;
-    top:0; left:0;
-    width: 100%; height: 100%;
-    background: rgba(194, 24, 91, 0.6);
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1.25rem;
-    transition: opacity 0.3s ease;
-    border-radius: 1rem 1rem 0 0;
-  }
-  #our-rentals .service-card:hover .overlay {
-    opacity: 1;
-  }
-  #our-rentals h5 {
-    margin: 1rem 1rem 0.25rem 1rem;
-    font-weight: 700;
-    color: #880E4F;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-  }
-  #our-rentals p {
-    margin: 0 1rem 1rem 1rem;
-    color: #555;
-    font-size: 0.95rem;
-    font-family: 'Poppins', sans-serif;
-  }
-  @media (max-width: 767px) {
-    #our-rentals .service-card .image-wrapper {
-      height: 150px;
-    }
-  }
-</style>
-
-<script>
-  const rentalCategories = {
-    "chairs_and_tables": {
-      name: "Chairs and Tables",
-      description: "Elegant chairs and commercial tables perfect for any event.",
-      image: "img/hero1.jpg"
-    },
-    "concessions": {
-      name: "Concessions",
-      description: "Delicious concession machines and supplies for your event.",
-      image: "img/conc/conc1.png"
-    },
-    "heating_cooling": {
-      name: "Heating & Cooling",
-      description: "Keep your guests comfortable with commercial-grade equipment.",
-      image: "img/heating&cooling/Waycool.png"
-    },
-    "bounce_house": {
-      name: "Bounce House",
-      description: "Fun and safe bounce houses for parties of all ages.",
-      image: "img/bounce/bounce1.jpg"
-    },
-    "event_tents": {
-      name: "Event Tents",
-      description: "Commercial grade frame tents for any event. Setup included.",
-      image: "img/tents/tent8.jpg"
-    },
-    "yard_signs": {
-      name: "Yard Signs",
-      description: "Custom yard signs for any celebration.",
-      image: "img/yardsign/yard3.jpg"
-    }
-  };
-
-  const rentalsGrid = document.getElementById("rentalsGrid");
-
-  Object.entries(rentalCategories).forEach(([key, cat]) => {
-    const col = document.createElement("div");
-    col.className = "col-12 col-sm-6 col-md-4";
-
-    col.innerHTML = `
-      <a href="category.html?id=${key}" class="text-decoration-none" aria-label="View ${cat.name} Products">
-        <div class="service-card">
-          <div class="image-wrapper">
-            <img class="card-img-top" src="${cat.image}" alt="${cat.name}" loading="lazy" />
-            <div class="overlay">View Products</div>
-          </div>
-          <h5>${cat.name}</h5>
-          <p>${cat.description}</p>
-        </div>
-      </a>
-    `;
-
-    rentalsGrid.appendChild(col);
-  });
-</script>
-
-
-
-<!-- How It Works Section -->
-<section id="how-it-works" class="py-5">
-  <div class="container text-center">
-    <h2 class="mb-5 fw-bold ">How It Works</h2>
-    <div class="row g-4">
-
-      <!-- Step 1 -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded-4 shadow-sm h-100 step-card">
-          <div class="mb-3">
-            <i class="bi bi-search-heart fs-1 text-danger"></i>
-          </div>
-          <h5 class="fw-semibold ">1. Browse Items</h5>
-          <p class="text-muted">Explore our collection of chairs, canopies, utensils, and more — perfect for your party or event.</p>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded-4 shadow-sm h-100 step-card">
-          <div class="mb-3">
-            <i class="bi bi-whatsapp fs-1 text-success"></i>
-          </div>
-          <h5 class="fw-semibold ">2. Contact Instantly</h5>
-          <p class="text-muted">Click to message us on WhatsApp instantly. We’ll confirm availability and pricing fast.</p>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded-4 shadow-sm h-100 step-card">
-          <div class="mb-3">
-            <i class="bi bi-truck fs-1 text-primary"></i>
-          </div>
-          <h5 class="fw-semibold ">3. Delivery & Setup</h5>
-          <p class="text-muted">We deliver and set up at your event location — stress-free and on time.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<section id="about" class="py-5">
-  <div class="container">
-    <div class="row align-items-center gy-5">
-      <!-- Text Section (Appears First on Desktop) -->
-      <div class="col-md-6">
-        <h2 class="fw-bold  mb-4">
-          Global Event Rentals <span style="color:#A63A8C;">— Your Event, Our Expertise</span>
-        </h2>
-        <p class="text-muted fs-5">
-          We specialize in providing premium rentals for international events. Whether it's a grand wedding or a corporate gala, we ensure everything from chairs to canopies is delivered with precision and care.
-        </p>
-        <p class="text-muted">
-          From luxury furnishings to versatile solutions, our focus is on quality, affordability, and punctuality. We handle the logistics, so you can enjoy your event.
-        </p>
-        <a href="contact.html" class="btn mt-3 px-4 py-2 rounded-pill">Contact Us</a>
-      </div>
-
-      <!-- Image Section (Appears Second on Desktop) -->
-      <div class="col-md-6">
-        <div class="about-img-wrapper">
-          <img src="img/hero1.jpg" 
-               alt="Elegant event setup" 
-               class="img-fluid rounded-4 shadow-sm about-img" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Our Rentals Section -->
-<section id="gallery" class="py-5">
-  <div class="container">
-
-    <!-- Section Header -->
-    <div class="text-center mb-4">
-      <h2 class="fw-bold ">Our Gallery</h2>
-      <p class="text-muted">Everything you need for your perfect event — ready for rent.</p>
-    </div>
-
-   <!-- Buttons for Desktop (Visible on medium screens and above) -->
-<div class="text-center mb-4 d-none d-md-block">
-  <button class="btn btn-outline-dark mx-1 filter-btn active" data-filter="all">All</button>
-  <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="chair">Table & Chairs</button>
-  <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="heating&cooling">Heating & Cooling</button>
-  <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="tents">Tents</button>
-  <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="concessions">Concessions</button>
-  <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="bouncehouse">Bounce House</button>
-</div>
-
-<!-- Accordion for Mobile (Visible on smaller screens) -->
-<div class="container mb-3 mt-4">
-  <!-- Mobile view: Dropdown for Filters -->
-  <div class="dropdown d-block d-md-none">
-    <button class="btn btn-outline-dark dropdown-toggle w-100" type="button" id="dropdownFilters" data-bs-toggle="dropdown" aria-expanded="false">
-      Filters
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
     </button>
-    <ul class="dropdown-menu w-100" aria-labelledby="dropdownFilters">
-      <li><a class="dropdown-item filter-btn" data-filter="all">All</a></li>
-      <li><a class="dropdown-item filter-btn" data-filter="chair">Table & Chairs</a></li>
-      <li><a class="dropdown-item filter-btn" data-filter="heating&cooling">Heating & Cooling</a></li>
-      <li><a class="dropdown-item filter-btn" data-filter="tents">Tents</a></li>
-      <li><a class="dropdown-item filter-btn" data-filter="concessions">Concessions</a></li>
-      <li><a class="dropdown-item filter-btn" data-filter="bouncehouse">Bounce House</a></li>
-      <li><a class="dropdown-item filter-btn" data-filter="yardsign">Yard Sign</a></li>
-    </ul>
   </div>
-</div>
 
 
 
-    <!-- Rental Items Grid -->
-    <div class="row g-4" id="rentalGrid">
-
-      <!-- Template for each rental card -->
-      <!-- Repeat for each item -->
-  <div class="col-md-4 rental-item" data-category="chair" data-id="chair1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/chairs/t20.jpg" alt="Chiavari Gold Chair">
+  <!-- Our Rentals Section -->
+  <section id="our-rentals" class="py-5" style="background-color: #EDEDED;">
+    <div class="container text-center">
+      <h2 class="mb-5 fw-bold" style="color: #A63A8C; font-family: 'Poppins', sans-serif;">Explore Our Party Rentals
+      </h2>
+      <div id="rentalsGrid" class="row g-4 justify-content-center"></div>
     </div>
-    <div class="card-body text-center">
-      <h5 class="card-title">Chiavari Gold Chair</h5>   
-    </div>
-  </div>
-</div>
+  </section>
 
 
 
-  <div class="col-md-4 rental-item" data-category="chair" data-id="chair2">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/chairs/t2.png" alt="Fan Back Folding Chair">
-    </div>
-    <div class="card-body text-center">
-      <h5 class="card-title">Fan Back Folding Chair</h5>   
-    </div>
-  </div>
-</div>
 
-  <div class="col-md-4 rental-item" data-category="chair" data-id="tableCollection">
-  <a href="product.html?id=tableCollection" class="text-decoration-none">
-    <div class="card h-100 border-0 rental-card shadow">
-      <div class="rental-img-wrapper">
-        <img src="img/chairs/t4.jpg" alt="Table Collection">
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-5 fw-bold ">How It Works</h2>
+      <div class="row g-4">
+
+        <!-- Step 1 -->
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-4 shadow-sm h-100 step-card">
+            <div class="mb-3">
+              <i class="bi bi-search-heart fs-1 text-danger"></i>
+            </div>
+            <h5 class="fw-semibold ">1. Browse Items</h5>
+            <p class="text-muted">Explore our collection of chairs, canopies, utensils, and more — perfect for your
+              party or event.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-4 shadow-sm h-100 step-card">
+            <div class="mb-3">
+              <i class="bi bi-whatsapp fs-1 text-success"></i>
+            </div>
+            <h5 class="fw-semibold ">2. Contact Instantly</h5>
+            <p class="text-muted">Click to message us on WhatsApp instantly. We’ll confirm availability and pricing
+              fast.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-4 shadow-sm h-100 step-card">
+            <div class="mb-3">
+              <i class="bi bi-truck fs-1 text-primary"></i>
+            </div>
+            <h5 class="fw-semibold ">3. Delivery & Setup</h5>
+            <p class="text-muted">We deliver and set up at your event location — stress-free and on time.</p>
+          </div>
+        </div>
+
       </div>
-      <div class="card-body text-center">
-        <h5 class="card-title">Table Collection</h5>   
+    </div>
+  </section>
+
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <!-- Text Section (Appears First on Desktop) -->
+        <div class="col-md-6">
+          <h2 class="fw-bold  mb-4">
+            Global Event Rentals <span style="color:#A63A8C;">— Your Event, Our Expertise</span>
+          </h2>
+          <p class="text-muted fs-5">
+            We specialize in providing premium rentals for international events. Whether it's a grand wedding or a
+            corporate gala, we ensure everything from chairs to canopies is delivered with precision and care.
+          </p>
+          <p class="text-muted">
+            From luxury furnishings to versatile solutions, our focus is on quality, affordability, and punctuality. We
+            handle the logistics, so you can enjoy your event.
+          </p>
+          <a href="contact.html" class="btn mt-3 px-4 py-2 rounded-pill">Contact Us</a>
+        </div>
+
+        <!-- Image Section (Appears Second on Desktop) -->
+        <div class="col-md-6">
+          <div class="about-img-wrapper">
+            <img src="img/hero1.jpg" alt="Elegant event setup" class="img-fluid rounded-4 shadow-sm about-img" />
+          </div>
+        </div>
       </div>
     </div>
-  </a>
-</div>
+  </section>
+
+
+  <!-- Our Rentals Section -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold ">Our Gallery</h2>
+        <p class="text-muted">Everything you need for your perfect event — ready for rent.</p>
+      </div>
+
+      <!-- Buttons for Desktop (Visible on medium screens and above) -->
+      <div class="text-center mb-4 d-none d-md-block">
+        <button class="btn btn-outline-dark mx-1 filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="chair">Table & Chairs</button>
+        <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="heating&cooling">Heating & Cooling</button>
+        <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="tents">Tents</button>
+        <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="concessions">Concessions</button>
+        <button class="btn btn-outline-dark mx-1 filter-btn" data-filter="bouncehouse">Bounce House</button>
+      </div>
+
+      <!-- Accordion for Mobile (Visible on smaller screens) -->
+      <div class="container mb-3 mt-4">
+        <!-- Mobile view: Dropdown for Filters -->
+        <div class="dropdown d-block d-md-none">
+          <button class="btn btn-outline-dark dropdown-toggle w-100" type="button" id="dropdownFilters"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Filters
+          </button>
+          <ul class="dropdown-menu w-100" aria-labelledby="dropdownFilters">
+            <li><a class="dropdown-item filter-btn" data-filter="all">All</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="chair">Table & Chairs</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="heating&cooling">Heating & Cooling</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="tents">Tents</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="concessions">Concessions</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="bouncehouse">Bounce House</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="yardsign">Yard Sign</a></li>
+          </ul>
+        </div>
+      </div>
 
 
 
-<div class="col-md-4 rental-item" data-category="tents" data-id="tent1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/tents/tent8.jpg" alt="20x20 Frame Tent">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">20x20 Frame Tent</h5>   
-    </div>
-  </div>
-</div>  
+      <!-- Rental Items Grid -->
+      <div class="row g-4" id="rentalGrid">
+
+        <!-- Template for each rental card -->
+        <!-- Repeat for each item -->
+        <div class="col-md-4 rental-item" data-category="chair" data-id="chair1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/chairs/t20.jpg" alt="Chiavari Gold Chair">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Chiavari Gold Chair</h5>
+            </div>
+          </div>
+        </div>
 
 
-<div class="col-md-4 rental-item" data-category="heating&cooling" data-id="heating1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/heating&cooling/Waycool.png" alt="waycool cooler">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Waycool Cooler</h5>   
-    </div>
-  </div>
-</div> 
 
- <div class="col-md-4 rental-item" data-category="concessions" data-id="conc1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/conc/conc2.jpg" alt="popcorn machine">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Popcorn Machine</h5>   
-    </div>
-  </div>
-</div>  
+        <div class="col-md-4 rental-item" data-category="chair" data-id="chair2">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/chairs/t2.png" alt="Fan Back Folding Chair">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Fan Back Folding Chair</h5>
+            </div>
+          </div>
+        </div>
 
-<div class="col-md-4 rental-item" data-category="concessions" data-id="conc2">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/conc/conc1.jpg" alt="Cotton Candy Machine">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Cotton Candy Machine</h5>   
-    </div>
-  </div>
-</div>
+        <div class="col-md-4 rental-item" data-category="chair" data-id="tableCollection">
+          <a href="product.html?id=tableCollection" class="text-decoration-none">
+            <div class="card h-100 border-0 rental-card shadow">
+              <div class="rental-img-wrapper">
+                <img src="img/chairs/t4.jpg" alt="Table Collection">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Table Collection</h5>
+              </div>
+            </div>
+          </a>
+        </div>
 
-<div class="col-md-4 rental-item" data-category="concessions" data-id="conc3">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/conc/conc3.png" alt="Cotton Candy Machine">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Shaved Ice Cone Machine</h5>   
-    </div>
-  </div>
-</div>  
+        <div class="col-md-4 rental-item" data-category="chair" data-id="table4">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/chairs/t15.png" alt="Table Collection">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Commercial Round Table</h5>
+            </div>
+          </div>
+          </a>
+        </div>
 
-      
 
-<div class="col-md-4 rental-item" data-category="bouncehouse" data-id="bounce1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/bounce/bounce1.jpg" alt="Standard Bounce House">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Standard Bounce House</h5>   
-    </div>
-  </div>
-</div> 
 
-<div class="col-md-4 rental-item" data-category="bouncehouse" data-id="bounce1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/bounce/bounce2.jpg" alt="Standard Bounce House">
-    </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Standard Bounce House</h5>   
-    </div>
-  </div>
-</div> 
+        <div class="col-md-4 rental-item" data-category="tents" data-id="tent1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/tents/tent1.png" alt="20x20 Frame Tent">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">20x20 Frame Tent</h5>
+            </div>
+          </div>
+        </div>
 
-<div class="col-md-4 rental-item" data-category="yardsign" data-id="yard1">
-  <div class="card h-100 border-0 rental-card shadow">
-    <div class="rental-img-wrapper">
-      <img src="img/yardsign/yard3.jpg" alt="Birthday Yard Sign">
+        <div class="col-md-4 rental-item" data-category="tents" data-id="tent1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/tents/tent4.png" alt="20x20 Frame Tent">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">20x40 Frame Tent</h5>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 rental-item" data-category="heating&cooling" data-id="heating1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/heating&cooling/Waycool.png" alt="waycool cooler">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Waycool Cooler</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="concessions" data-id="conc1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/conc/conc2.jpg" alt="popcorn machine">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Popcorn Machine</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="concessions" data-id="conc2">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/conc/conc1.jpg" alt="Cotton Candy Machine">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Cotton Candy Machine</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="concessions" data-id="conc3">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/conc/conc3.png" alt="Cotton Candy Machine">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Shaved Ice Cone Machine</h5>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4 rental-item" data-category="bouncehouse" data-id="bounce1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/bounce/bounce1.jpg" alt="Standard Bounce House">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Standard Bounce House</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="bouncehouse" data-id="bounce1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/bounce/bounce2.jpg" alt="Standard Bounce House">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Standard Bounce House</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="yardsign" data-id="yard1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/yardsign/yard3.jpg" alt="Birthday Yard Sign">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Yard Sign</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="yardsign" data-id="yard1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/yardsign/yard1.jpg" alt="Birthday Yard Sign">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Yard Sign</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="yardsign" data-id="yard1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/yardsign/yard4.jpg" alt="Birthday Yard Sign">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Yard Sign</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="yardsign" data-id="yard1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/yardsign/yard5.jpg" alt="Birthday Yard Sign">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Yard Sign</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 rental-item" data-category="yardsign" data-id="yard1">
+          <div class="card h-100 border-0 rental-card shadow">
+            <div class="rental-img-wrapper">
+              <img src="img/yardsign/yard7.jpg" alt="Birthday Yard Sign">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Yard Sign</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more items like this... -->
+
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-4">
+        <button id="loadMoreBtn" class="btn  px-4" style="background-color:#A63A8C; color:#ffffff">Load More</button>
+      </div>
+
     </div>
-    <div class="card-body text-center">
-    <h5 class="card-title">Birthday Yard Sign</h5>   
-    </div>
-  </div>
-</div> 
+  </section>
 
-      <!-- Add more items like this... -->
 
-    </div>
-
-    <!-- Load More Button -->
-    <div class="text-center mt-4">
-      <button id="loadMoreBtn" class="btn  px-4" style="background-color:#A63A8C; color:#ffffff">Load More</button>
-    </div>
-
-  </div>
-</section>
-
-  
-<section id="testimonial" class="testimonial-wrapper">
+  <!-- <section id="testimonial" class="testimonial-wrapper">
   <h2 style="color: #A63A8C;" class="text-center mb-4">What Our Customers Say</h2>
   <div class="testimonial-track">
-    <!-- Repeat testimonials for smooth scrolling -->
+    
     <div class="testimonial-card card text-center shadow-sm p-3">
       <img src="https://img.icons8.com/color/96/user-female-circle--v1.png" class="rounded-circle mx-auto mt-2" alt="Biola">
       <div class="card-body">
@@ -559,7 +477,7 @@
           <h6 class="card-title mb-0">Peter Adams</h6>
         </div>
       </div>
-      <!-- Repeat -->
+      
       <div class="testimonial-card card text-center shadow-sm p-3">
         <img src="https://img.icons8.com/color/96/user-female-circle--v1.png" class="rounded-circle mx-auto mt-2" alt="Jane">
         <div class="card-body">
@@ -574,105 +492,62 @@
           <h6 class="card-title mb-0">John Smith</h6>
         </div>
       </div>
-      <!-- Add more cards as needed -->
+      
     </div>
-  </div>
+  </div> -->
 
   <section id="contact py-5">
-  <div class="container">
-    <div class="text-center mb-4">
-      <h2 style="color: #A63A8C;">Let's Talk</h2>
-      <p>We’d love to hear from you. Reach out via the form or connect through our channels.</p>
-    </div>
-
-    <div class="row justify-content-center align-items-start">
-      <!-- Left: Form -->
-      <div class="col-md-6 mb-4">
-        <form id="smsForm" class="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required class="form-control mb-3">
-          <input type="email" name="phone" placeholder="Your Email" required class="form-control mb-3">
-          <textarea placeholder="Your Message" name="message" required class="form-control mb-3"></textarea>
-          <button type="submit" class="btn btn-primary w-100">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-        </form>
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 style="color: #A63A8C;">Let's Talk</h2>
+        <p>We’d love to hear from you. Reach out via the form or connect through our channels.</p>
       </div>
 
-      <!-- Right: Info -->
-      <div class="col-md-4 text-start">
-        <div class="contact-info">
-          <p><strong>Email:</strong>
-            <a class="info" href="mailto:crescenteventsandrentals@gmail.com">crescenteventsandrentals@gmail.com</a>
-          </p>
-          <p><strong>Phone:</strong>
-            <a class="info" href="tel:+23466130074">+13466130074</a>
-          </p>
-          <div class="social-icons d-flex gap-3 mt-3">
-            <a  href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <div class="row justify-content-center align-items-start">
+        <!-- Left: Form -->
+        <div class="col-md-6 mb-4">
+          <form id="smsForm" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required class="form-control mb-3">
+            <input type="email" name="phone" placeholder="Your Email" required class="form-control mb-3">
+            <textarea placeholder="Your Message" name="message" required class="form-control mb-3"></textarea>
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Info -->
+        <div class="col-md-4 text-start">
+          <div class="contact-info">
+            <p><strong>Email:</strong>
+              <a class="info" href="mailto:crescenteventsandrentals@gmail.com">crescenteventsandrentals@gmail.com</a>
+            </p>
+            <p><strong>Phone:</strong>
+              <a class="info" href="tel:+23466130074">+13466130074</a>
+            </p>
+            <div class="social-icons d-flex gap-3 mt-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-column brand">
-        <img 
-          src="img/logo1.png" 
-          alt="Crescent Event & Rentals Logo" 
-          style="max-width: 180px; width: 100%; height: auto;" 
-        />
-        <p>Creating unforgettable moments — from planning to execution, all in one place.</p>
-      </div>
-  
-      <div class="footer-column links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#services">How It Works</a></li>
-          <li><a href="#testimonial">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About Us</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-column contact">
-        <h3>Contact Us</h3>
-        <p>Email: <a href="mailto:crescenteventsandrentals@gmail.com">crescenteventsandrentals@gmail.com</a></p>
-        <p>Phone: <a href="tel:+13462560142">+13466130074</a></p>
-        <a style="color: #EDEDED;" href="contact.html" class="whatsapp-btn" target="_blank">
-          <img src="https://img.icons8.com/color/48/sms.png" alt="sms" />Request a quote
-        </a>
-      </div>
-    </div>
-  
-    <div class="footer-bottom">
-      <p>&copy; 2025 Crescent Event & Rentals. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  </main>
+  <div id="footer-placeholder"></div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.rental-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const productId = item.getAttribute('data-id');
-        if (productId) {
-          window.location.href = `product.html?id=${productId}`;
-        }
-      });
-    });
-  });
-</script>
 
-    
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

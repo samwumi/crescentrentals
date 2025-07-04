@@ -125,7 +125,7 @@ if (categoryId && allProducts[categoryId]) {
         col.className = "col-12 col-sm-6 col-lg-4";
         col.innerHTML = `
      <a href="${product.id === 'tableCollection' ? 'product.html?id=tableCollection' : 'product.html?id=' + product.id}" class="text-decoration-none">
-        <div class="product-card h-100 d-flex flex-column">
+        <div class="product-card h-100 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
             <div class="product-img-wrapper">
               <img src="${product.image}" alt="${product.title}" />
             </div>

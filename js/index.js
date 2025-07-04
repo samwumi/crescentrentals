@@ -53,7 +53,7 @@ Object.entries(rentalCategories).forEach(([key, cat]) => {
 
   col.innerHTML = `
       <a href="category.html?id=${key}" class="text-decoration-none" aria-label="View ${cat.name} Products">
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <div class="image-wrapper">
             <img class="card-img-top" src="${cat.image}" alt="${cat.name}" loading="lazy" />
             <div class="overlay">View Products</div>

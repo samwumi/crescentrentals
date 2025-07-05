@@ -94,7 +94,7 @@ const products = {
 
     conc1: {
         title: "Popcorn Machine",
-        price: "$70",
+        price: "",
         image: "img/conc/conc2.jpg",
         description: "Rent this old fashioned 60-inch-tall Commercial High Production Popcorn Machine with the Cart. This top of the line machine pops 147 one-ounce bags per hour...",
         specs: {
@@ -114,7 +114,7 @@ const products = {
     },
     conc2: {
         title: "Cotton Candy Machine",
-        price: "$75",
+        price: "",
         image: "img/conc/conc1.png",
         description: "Rent a High Production Commercial Cotton Candy machine. Perfect for any fun event.",
         specs: {
@@ -132,7 +132,7 @@ const products = {
 
     conc3: {
         title: "Snow Cone Machine",
-        price: "$70",
+        price: "",
         image: "img/conc/conc3.png",
         description: "Beat the heat and delight your guests with our fun and easy-to-use Snow Cone Machine! This party essential creates refreshing, icy treats in seconds — just add ice and syrup! With its bright design and efficient shaving blades, it's perfect for birthdays, school fairs, fundraisers, and summer gatherings. Kids and adults alike will enjoy customizing their cones with colorful flavors for a cool treat everyone will love!",
         specs: {

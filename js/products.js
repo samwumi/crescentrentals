@@ -100,7 +100,7 @@ const products = {
         specs: {
             "Power": "1420W / 12 Amps",
             "Includes": "50 popcorn bags + kits",
-            "Add-on": "$10 for 25 extra kits"
+            // "Add-on": "$10 for 25 extra kits"
 
         },
         variants: [
